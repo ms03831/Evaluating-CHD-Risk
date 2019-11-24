@@ -12,6 +12,6 @@ This project was done as part of our  **Artifical Intelligence** Class , taken a
 
 
 # Contributors:
-Mudasir Hanif Shaikh
-Kainat Abbasi
-Shehryar Mughal
+Mudasir Hanif Shaikh  </br>
+Kainat Abbasi  </br>
+Shehryar Mughal  </br>
