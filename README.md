@@ -10,3 +10,8 @@ We evaluate and compate the performance of the following Artificial Intelligence
 
 This project was done as part of our  **Artifical Intelligence** Class , taken at Habib University in Fall of 2019.
 
+
+# Contributors:
+Mudasir Hanif Shaikh
+Kainat Abbasi
+Shehryar Mughal
