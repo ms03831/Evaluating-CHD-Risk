@@ -15,39 +15,27 @@ For more information on the disease, and it's risk factors visit: [Coronary hear
 
 # About the Dataset:
 ## Features: 
-- male: int
-
+- male: int [0 or 1] </br>
+  Gender. </br>
+  1 if male, 0 if female.
 - age: int
-
+  Age of patient
 - education: int
-
 - currentSmoker: int
-
 - cigsPerDay: int
-
 - BPMeds: int
-
 - prevalentStroke: int
-
 - prevalentHyp: int
-
 - diabetes: int
-
 - totChol: int
-
 - sysBP: int
-
 - diaBP: int
-
 - BMI: float 
-
 - heartRate: int
-
 - glucose: int
 
-
 ## Target:
-- TenYearCHD: int [0 or 1]
+- TenYearCHD: int [0 or 1] </br>
   Whether or not the patient will develop a Coronary heart disease in 10 years time. </br>
   1 for Yes, 0 for No.
 
@@ -56,4 +44,5 @@ For more information on the disease, and it's risk factors visit: [Coronary hear
 
 
 
-*Attribution: [Framingham Heart study dataset](https://www.kaggle.com/amanajmera1/framingham-heart-study-dataset)
+*Source: [Framingham Heart study dataset](https://www.kaggle.com/amanajmera1/framingham-heart-study-dataset)*: 
+The dataset is publically available on the Kaggle website, and it is from an ongoing cardiovascular study on residents of the town of Framingham, Massachusetts. The classification goal is to predict whether the patient has 10-year risk of future coronary heart disease (CHD).The dataset provides the patients’ information. It includes over 4,000 records and 15 attributes. Variables Each attribute is a potential risk factor. There are both demographic, behavioral and medical risk factors.
