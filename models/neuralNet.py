@@ -60,7 +60,11 @@ class MyNeuralNet:
             array of dimensions of layers. 
             size of layerArray is the number of layers in our network
         """
-            
+        trainError = []
+        trainAccuracy = []
+        testError = []
+
+
         self.layers = layerArray #layes in our network
         self.B = [] #bias matrix
         self.W = [] #weights matrix
@@ -184,7 +188,6 @@ class MyNeuralNet:
 
             print("Epoch no: {}\n----------".format(i+1))
             print("Train Error: {0} \n Train Accuracy: {1} \n Test Error: {2} \n \n \n".format(trainError[i], trainAccuracy[i], testError[i]))
-
         plt.plot(range(epochs), trainError, label = 'Train Error')
         plt.plot(range(epochs), testError, label = 'Test Error')
         plt.legend()
@@ -198,5 +201,5 @@ class MyNeuralNet:
         
         print("TEST Accuracy: ", accuracy(self.forwardPass(test[0]), test[1]))
 
-network = MyNeuralNet([train[0].shape[1], 14, 1])
-network.train(train, test, 1000, 10, 0.01)
+network = MyNeuralNet([train[0].shape[1], 10, 1])
+network.train(train, test, 10, 10, 0.01)
