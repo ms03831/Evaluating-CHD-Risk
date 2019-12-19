@@ -1,0 +1,12 @@
+evaluate_risk(male, age, currentSmoker, cigsPerDay, BPMeds, prevalentStroke, prevalentHyp, diabetes, totChol, sysBP, diaBP, BMI, heartRate, glucose):-
+
+    age<= 46.5, sysBP <= 152.75, BMI <= 39.815, totChol <= 437.0.
+    age<= 46.5, sysBP <= 152.75, BMI <= 39.815, diaBP<= 95.0.
+    age<= 46.5, sysBP <= 152.75, heartRate <= 74.0, totChol<= 210.0.
+    age<= 46.5, sysBP <= 152.75, heartRate <= 74.0, totChol<= 210.0, diaBP<=110.5.
+    age<= 46.5, sysBP <= 152.75, heartRate <= 74.0, totChol<= 262.0, male <= 0.5
+
+
+
+
+
