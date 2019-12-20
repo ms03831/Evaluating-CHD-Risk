@@ -29,19 +29,21 @@ TOP = Label(root, justify=LEFT, text="Evaluating Risk of CHD.....", fg="#003566"
 TOP.config(font=("Monotype Corsiva", 35))
 TOP.grid(row=0, column=0, columnspan=3, padx=0, pady=30)
 
-# entry variables
-Age = StringVar()
-Age.set(None)
 
-BMI = StringVar()
+# entry variables
+Age = IntVar()
+Age.set(0)
+
+BMI = DoubleVar()
 BMI.set(None)
+
 Gender = StringVar()
 Gender.set("male")
 
 smoker = StringVar()
 smoker.set("Yes")
 
-cigsPerDay = StringVar()
+cigsPerDay = IntVar()
 cigsPerDay.set(0)
 
 BPMeds = StringVar()
@@ -56,20 +58,20 @@ prevalentStroke.set("No")
 prevalentHyp = StringVar()
 prevalentHyp.set("No")
 
-heartRate = StringVar()
-heartRate.set(None)
+heartRate = DoubleVar()
+heartRate.set(0)
 
-glucose = StringVar()
-glucose.set(None)
+glucose = DoubleVar()
+glucose.set(0)
 
-sysBP = StringVar()
-sysBP.set(None)
+sysBP = DoubleVar()
+sysBP.set(0)
 
-totChol = StringVar()
-totChol.set(None)
+totChol = DoubleVar()
+totChol.set(0)
 
-diaBP = StringVar()
-diaBP.set(None)
+diaBP = DoubleVar()
+diaBP.set(0)
 
 
 
@@ -118,7 +120,7 @@ S14Lb = Label(root, justify = LEFT,  text="Diabolic BP", font=("Comic Sans MS", 
 S14Lb.grid(row=13, column=3, pady=10,  padx = 25,sticky=W)
 
 accuracy = Label(root, justify = LEFT, text="Accuracy", fg="#003566", bg="#99ccff")
-accuracy.config(font=("Monotype Corsiva", 25))
+accuracy.config(font=("Monotype Corsiva", 30))
 accuracy.grid(row=19, column=0, columnspan=2, padx=20)
 
 plLb = Label(root, font=("Comic Sans MS", 12), padx = 60, text="Prolog", fg="#003566", bg="#99ccff")
@@ -133,35 +135,64 @@ nnLb.grid(row=25, column=0, pady=10, sticky=W)
 nbLb = Label(root, font=("Comic Sans MS", 12), padx = 60, text="Naive Bayes", fg="#003566", bg="#99ccff")
 nbLb.grid(row=27, column=0, pady=10, sticky=W)
 
-t1 = Text(root, height=1, width=20,fg="#003566", bg="#99ccff")
+t1 = Text(root, height=1, width=20,bg="#001a33",fg="#cce6ff")
 t1.grid(row=21, column=1, padx=0)
 
-t2 = Text(root, height=1, width=20,fg="#003566", bg="#99ccff")
+t2 = Text(root, height=1, width=20,bg="#001a33",fg="#cce6ff")
 t2.grid(row=23, column=1 , padx=0)
 
-t3 = Text(root, height=1, width=20,fg="#003566", bg="#99ccff")
+t3 = Text(root, height=1, width=20,bg="#001a33",fg="#cce6ff")
 t3.grid(row=25, column=1 , padx=0)
 
-t4 = Text(root, height=1, width=20,fg="#003566", bg="#99ccff")
+t4 = Text(root, height=1, width=20,bg="#001a33",fg="#cce6ff")
 t4.grid(row=27, column=1 , padx=0)
 
 
+#age box
+t5 = Text(root, height=1, width=16,bg="#001a33",fg="#cce6ff")
+t5.grid(row=7, column=1 , padx=0)
+#BMI
+t6 = Text(root, height=1, width=16,bg="#001a33",fg="#cce6ff")
+t6.grid(row=8, column=1 , padx=0)
+#CigsPerDat
+t7 = Text(root, height=1, width=16,bg="#001a33",fg="#cce6ff")
+t7.grid(row=11, column=1 , padx=0)
+
+#heart
+t8 = Text(root, height=1, width=16,bg="#001a33",fg="#cce6ff")
+t8.grid(row=9, column=4 , padx=0)
+
+#glucose
+t9 = Text(root, height=1, width=16,bg="#001a33",fg="#cce6ff")
+t9.grid(row=10, column=4 , padx=0)
+#sys
+t10 = Text(root, height=1, width=16,bg="#001a33",fg="#cce6ff")
+t10.grid(row=11, column=4 , padx=0)
+#total
+t11 = Text(root, height=1, width=16,bg="#001a33",fg="#cce6ff")
+t11.grid(row=12, column=4 , padx=0)
+#diA
+t11 = Text(root, height=1, width=16,bg="#001a33",fg="#cce6ff")
+t11.grid(row=13, column=4 , padx=0)
+
+
 lst = sorted(["Yes", "No"])
+lst1 = sorted(["Male", "Female", "Other"])
 
 
-S1 = OptionMenu(root, Age, *lst)
+'''S1 = OptionMenu(root, Age, *lst)
 S1.grid(row=7, column=1)
 #S1.pack()
 S1.config(font=('calibri',(10)),bg="#001a33",fg="#cce6ff",width=12)
-S1['menu'].config(font=('calibri',(10)),bg='#4da9ff')
+S1['menu'].config(font=('calibri',(10)),bg='#4da9ff')'''
 
-S2 = OptionMenu(root, BMI, *lst)
+'''S2 = OptionMenu(root, BMI, *lst)
 S2.grid(row=8, column=1)
 #S2.pack()
 S2.config(font=('calibri',(10)),bg="#001a33",fg="#cce6ff",width=12)
-S2['menu'].config(font=('calibri',(10)),bg='#4da9ff')
+S2['menu'].config(font=('calibri',(10)),bg='#4da9ff')'''
 
-S3 = OptionMenu(root, Gender, *lst)
+S3 = OptionMenu(root, Gender, *lst1)
 S3.grid(row=9, column=1)
 #S3.pack()
 S3.config(font=('calibri',(10)),bg="#001a33",fg="#cce6ff",width=12)
@@ -173,11 +204,11 @@ S4.grid(row=10, column=1)
 S4.config(font=('calibri',(10)),bg="#001a33",fg="#cce6ff",width=12)
 S4['menu'].config(font=('calibri',(10)),bg='#4da9ff')
 
-S5 = OptionMenu(root, cigsPerDay, *lst)
+'''S5 = OptionMenu(root, cigsPerDay, *lst)
 S5.grid(row=11, column=1)
 #S5.pack()
 S5.config(font=('calibri',(10)),bg="#001a33",fg="#cce6ff",width=12)
-S5['menu'].config(font=('calibri',(10)),bg='#4da9ff')
+S5['menu'].config(font=('calibri',(10)),bg='#4da9ff')'''
 
 S6 = OptionMenu(root, BPMeds, *lst)
 S6.grid(row=12, column=1)
@@ -203,7 +234,7 @@ S9.grid(row=8, column=4)
 S9.config(font=('calibri',(10)),bg="#001a33",fg="#cce6ff",width=12)
 S9['menu'].config(font=('calibri',(10)),bg='#4da9ff')
 
-S10 = OptionMenu(root, heartRate, *lst)
+'''S10 = OptionMenu(root, heartRate, *lst)
 S10.grid(row=9, column=4)
 #S10.pack()
 S10.config(font=('calibri',(10)),bg="#001a33",fg="#cce6ff",width=12)
@@ -231,7 +262,7 @@ S14 = OptionMenu(root, diaBP, *lst)
 S14.grid(row=13, column=4)
 #S14.pack()
 S14.config(font=('calibri',(10)),bg="#001a33",fg="#cce6ff",width=12)
-S14['menu'].config(font=('calibri',(10)),bg='#4da9ff')
+S14['menu'].config(font=('calibri',(10)),bg='#4da9ff')'''
 
 def yes():
     print("hello Word")
@@ -255,16 +286,16 @@ nb.grid(row=27, column=3,padx=30, sticky = W)
 
 
 #textfileds
-t5 = Text(root, height=1, width=20,fg="#003566", bg="#99ccff")
+t5 = Text(root, height=1, width=20,bg="#001a33",fg="#cce6ff")
 t5.grid(row=21, column=4, padx=10)
 
-t6 = Text(root, height=1, width=20,fg="#003566", bg="#99ccff")
+t6 = Text(root, height=1, width=20,bg="#001a33",fg="#cce6ff")
 t6.grid(row=23, column=4, padx=10)
 
-t7 = Text(root, height=1, width=20,fg="#003566", bg="#99ccff")
+t7 = Text(root, height=1, width=20,bg="#001a33",fg="#cce6ff")
 t7.grid(row=25, column=4, padx=10)
 
-t8 = Text(root, height=1, width=20,fg="#003566", bg="#99ccff")
+t8 = Text(root, height=1, width=20,bg="#001a33",fg="#cce6ff")
 t8.grid(row=27, column=4, padx=10)
 
 
