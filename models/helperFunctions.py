@@ -43,9 +43,18 @@ def normalize(x):
 #calculates error of entire batch.
 def calculateError(net, dataset):
     j = 0
+    print(dataset.shape, dataset[0].shape)
+    for data in dataset[0]:
+        yPred = self.forwardPass(data[0])
+        y = data[1].reshape((10,1)) ###added reshape
+        costEx = cost(yPred, y)
+        j += sum(costEx)
+    '''
     yPred = net.forwardPass(dataset[0])
     y = dataset[1]
     costEx = cost(yPred, y) #error of single example.
     j = costEx.sum()
+    '''
+    
     return j/len(dataset[0]) #taking mean
     
