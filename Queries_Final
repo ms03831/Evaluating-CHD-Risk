@@ -1,0 +1,24 @@
+high_chol(X):- X > 240.
+
+high_sys(Sys):- Sys > 140.
+
+high_dia(Dia):- Dia > 90.
+
+obese(BMI):- BMI > 30.
+
+high_BP(Sys, Dia):- high_sys(Sys), high_dia(Dia).
+
+
+evaluate_risk(Male, Age, CurrentSmoker, CigsPerDay, BPMeds, PrevalentStroke, PrevalentHyp, Diabetes, TotChol, SysBP, DiaBP, BMI, HeartRate, Glucose):- high_chol(TotChol), Age > 45, Male>0, high_BP(SysBP, DiaBP).
+
+evaluate_risk(Male, Age, CurrentSmoker, CigsPerDay, BPMeds, PrevalentStroke, PrevalentHyp, Diabetes, TotChol, SysBP, DiaBP, BMI, HeartRate, Glucose):- high_chol(TotChol), Age > 55, Male<0, high_BP(SysBP, DiaBP).
+
+evaluate_risk(Male, Age, CurrentSmoker, CigsPerDay, BPMeds, PrevalentStroke, PrevalentHyp, Diabetes, TotChol, SysBP, DiaBP, BMI, HeartRate, Glucose):- CurrentSmoker> 0, CigsPerDay>10, obese(BMI), high_BP(SysBP, DiaBP).
+
+evaluate_risk(Male, Age, CurrentSmoker, CigsPerDay, BPMeds, PrevalentStroke, PrevalentHyp, Diabetes, TotChol, SysBP, DiaBP, BMI, HeartRate, Glucose):- CurrentSmoker > 0, CigsPerDay>20, obese(BMI), Diabetes > 0.
+
+evaluate_risk(Male, Age, CurrentSmoker, CigsPerDay, BPMeds, PrevalentStroke, PrevalentHyp, Diabetes, TotChol, SysBP, DiaBP, BMI, HeartRate, Glucose):- Age > 60, CigsPerDay > 10, BPMeds > 0,PrevalentStroke > 0, PrevalentHyp > 0.
+
+evaluate_risk(Male, Age, CurrentSmoker, CigsPerDay, BPMeds, PrevalentStroke, PrevalentHyp, Diabetes, TotChol, SysBP, DiaBP, BMI, HeartRate, Glucose):- Age > 60, CigsPerDay > 10, HeartRate>95, Diabetes > 0.
+
+evaluate_risk(Male, Age, CurrentSmoker, CigsPerDay, BPMeds, PrevalentStroke, PrevalentHyp, Diabetes, TotChol, SysBP, DiaBP, BMI, HeartRate, Glucose):- Age > 60, CigsPerDay > 10, HeartRate>95, Diabetes > 0.
