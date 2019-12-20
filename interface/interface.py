@@ -21,7 +21,7 @@ class option_menu(OptionMenu):
 
 root = Tk()
 
-
+root.geometry("1000x800")
 root.title('CHD Risk Evaluation Interface')
 root.configure(background='#99ccff')
 
@@ -38,7 +38,7 @@ BMI = DoubleVar()
 BMI.set(None)
 
 Gender = StringVar()
-Gender.set("male")
+Gender.set("Male")
 
 smoker = StringVar()
 smoker.set("Yes")
@@ -132,7 +132,7 @@ bnlb.grid(row=23, column=0, pady=10, sticky=W)
 nnLb = Label(root,font=("Comic Sans MS", 12), padx = 60, text="Neural Network", fg="#003566", bg="#99ccff")
 nnLb.grid(row=25, column=0, pady=10, sticky=W)
 
-nbLb = Label(root, font=("Comic Sans MS", 12), padx = 60, text="Naive Bayes", fg="#003566", bg="#99ccff")
+nbLb = Label(root, font=("Comic Sans MS", 12), padx = 60, text="Prolog (Decision Tree)", fg="#003566", bg="#99ccff")
 nbLb.grid(row=27, column=0, pady=10, sticky=W)
 
 t1 = Text(root, height=1, width=20,bg="#001a33",fg="#cce6ff")
@@ -280,7 +280,7 @@ bn.grid(row=23, column=3,padx=30, sticky = W)
 nn = Button(root, justify = LEFT, text="Neural Network Prediction", command=yes, bg="#001a33",fg="#cce6ff")
 nn.grid(row=25, column=3,padx=30, sticky = W)
 
-nb = Button(root, justify = LEFT, text="Naive Bayes Prediction", command=yes, bg="#001a33",fg="#cce6ff")
+nb = Button(root, justify = LEFT, text="Prolog (Decision Tree)", command=yes, bg="#001a33",fg="#cce6ff")
 nb.grid(row=27, column=3,padx=30, sticky = W)
 
 
